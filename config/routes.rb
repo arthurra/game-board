@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'game_board#index'
+  root 'game_board#new'
+
+  get 'game_board/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
