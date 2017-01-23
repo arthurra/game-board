@@ -2,6 +2,15 @@
   fill: #fff
   stroke: #000
   stroke-width: 3
+  &:before
+    content: attr(data-value)
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 100px
+    height: 100px
+    border-radius: 50%
+    transform: translate(-50%, -50%)
 
 .tile--wood
   fill: ForestGreen
@@ -20,3 +29,12 @@
 
 .tile--desert
   fill: khaki
+
+.circle
+  fill: #fff
+  stroke: #000
+  stroke-width: 3
+
+.number
+  font-size: 48px
+  font-family: helvetica
