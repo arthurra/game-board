@@ -64,14 +64,69 @@ window.onload = function () {
     });
   };addRandomResource();
 
-  // Print out all of the business
-  console.log("Number of tiles =" + " " + tiles.length);
-  console.log("Number of resource types =" + " " + resourceTypes.length);
-  console.log("Number of wood tiles =" + " " + resourceTiles.wood.amount);
-  console.log("Number of sheep tiles =" + " " + resourceTiles.sheep.amount);
-  console.log("Number of wheat tiles =" + " " + resourceTiles.wheat.amount);
-  console.log("Number of brick tiles =" + " " + resourceTiles.brick.amount);
-  console.log("Number of ore tiles =" + " " + resourceTiles.ore.amount);
-  console.log("Number of desert tiles =" + " " + resourceTiles.desert.amount);
+
+  // Amount of each number
+  let twoAmount = 1;
+  let threeAmount = 2;
+  let fourAmount = 2;
+  let fiveAmount = 2;
+  let sixAmount = 2;
+  // skip seven
+  let eightAmount =2;
+  let nineAmount = 2;
+  let tenAmount = 2;
+  let elevenAmount = 2;
+  let twelveAmount = 1;
+
+  // Number object
+  let tileNumbers = {
+    2: {amount: twoAmount},
+    3: {amount: threeAmount},
+    4: {amount: fourAmount},
+    5: {amount: fiveAmount},
+    6: {amount: sixAmount},
+    // skip seven
+    8: {amount: eightAmount},
+    9: {amount: nineAmount},
+    10: {amount: tenAmount},
+    11: {amount: elevenAmount},
+    12: {amount: twelveAmount},
+  }
+
+  // Return a node list of the svg elements
+  let numbers = document.querySelectorAll('.tile:not(.tile--desert) ~ .number');
+
+  // Array of available resources
+  let availableNumbers = [];
+
+  // Build a list of available resources
+  let updateAvalaibleNumbers = function(){
+    for (let key of Object.keys(tileNumbers)) {
+      if (tileNumbers[key].amount > 0) {
+        availableNumbers.push(`${key}`)
+      } else if (tileNumbers[key].amount == 0) {
+        let emptyNumber = availableNumbers.indexOf(`${key}`);
+        if (emptyNumber != -1){
+          availableNumber.splice(emptyNumber, 1);
+        };
+      }
+    }
+  };updateAvalaibleNumbers();
+
+  // Loop over the tiles and add resource name
+  let addRandomNumber = function () {
+    numbers.forEach(function (number) {
+
+      let randomNumber = availableNumbers[Math.floor(Math.random()*availableNumbers.length)];
+      number.textContent = `${randomNumber}`;
+      tileNumbers[randomNumber].amount--;
+
+      // Drop the current list of available resources
+      availableNumbers = [];
+
+      // Rebuild the current list of available resources
+      updateAvalaibleNumbers();
+    });
+  };addRandomNumber();
 
 };
