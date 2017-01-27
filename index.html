@@ -1,332 +1,115 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Catan</title>
-<style>
-.game-board {
-  width: 100vw;
-  height: 100vh;
-}
-.game-board > svg {
-  max-width: 100%;
-  max-height: 100%;
-}
-.tile {
-  fill: #fff;
-  stroke: #000;
-  stroke-width: 3;
-}
-.tile--wood {
-  fill: ForestGreen;
-}
-.tile--sheep {
-  fill: LimeGreen;
-}
-.tile--wheat {
-  fill: gold;
-}
-.tile--brick {
-  fill: FireBrick;
-}
-.tile--ore {
-  fill: SlateGray;
-}
-.tile--desert {
-  fill: khaki;
-}
-.circle {
-  fill: #fff;
-  stroke: #000;
-  stroke-width: 3;
-}
-.number {
-  font-size: 48px;
-  font-family: helvetica;
-  text-align: center;
-}
-</style>
+  <title>Catan</title>
+  <link rel="stylesheet" media="all" href="/assets/game-board.css">
+  <script src="/assets/game-board.js"></script>
 </head>
+
 <body>
-
-<div class="game-board">
-  <svg id="classic-hex-board" xmlns="http://www.w3.org/2000/svg" width="1949.56" height="1801.15" viewBox="0 0 1949.56 1801.15">
-  <title>classic-catan-board</title>
-  <g>
-	<polygon id="tile-0" class="tile" points="585.1,0.6 779.9,113.1 779.9,338.1 585.1,450.6 390.2,338.1 390.2,113.1 	"/>
-	<circle class="circle" cx="585.1" cy="226.6" r="50"/>
-	<text transform="matrix(1 0 0 1 585.7222 245.1232)" text-anchor="middle" class="number">T</text>
-</g>
-<g>
-	<polygon id="tile-5" class="tile" points="390.2,338.1 585.1,450.6 585.1,675.6 390.2,788.1 195.4,675.6 195.4,450.6 	"/>
-	<circle class="circle" cx="390.2" cy="563.1" r="50"/>
-	<text transform="matrix(1 0 0 1 388.8623 582.6068)" text-anchor="middle" class="number">T</text>
-</g>
-<g>
-	<polygon id="tile-9" class="tile" points="195.4,675.6 390.2,788.1 390.2,1013.1 195.4,1125.6 0.5,1013.1 0.5,788.1 	"/>
-	<circle class="circle" cx="195.4" cy="900.6" r="50"/>
-	<text transform="matrix(1 0 0 1 194.0025 918.0903)" text-anchor="middle" class="number">T</text>
-</g>
-<g>
-	<polygon id="tile-1" class="tile" points="974.8,0.6 1169.6,113.1 1169.6,338.1 974.8,450.6 779.9,338.1 779.9,113.1 	"/>
-	<circle class="circle" cx="974.8" cy="226.6" r="50"/>
-	<text transform="matrix(1 0 0 1 973.4362 245.1233)" text-anchor="middle" class="number">T</text>
-</g>
-<g>
-	<polygon id="tile-6" class="tile" points="779.9,338.1 974.8,450.6 974.8,675.6 779.9,788.1 585.1,675.6 585.1,450.6 	"/>
-	<circle class="circle" cx="779.9" cy="563.1" r="50"/>
-	<text transform="matrix(1 0 0 1 778.5845 582.6066)" text-anchor="middle" class="number">T</text>
-</g>
-<g>
-	<polygon id="tile-10" class="tile" points="585.1,675.6 779.9,788.1 779.9,1013.1 585.1,1125.6 390.2,1013.1 390.2,788.1 	"/>
-	<circle class="circle" cx="585.1" cy="900.6" r="50"/>
-	<text transform="matrix(1 0 0 1 583.7329 918.09)" text-anchor="middle" class="number">T</text>
-</g>
-<g>
-	<polygon id="tile-15" class="tile" points="390.2,1463.1 195.4,1350.6 195.4,1125.6 390.2,1013.1 585.1,1125.6 585.1,1350.6 	"/>
-	<circle class="circle" cx="390.2" cy="1238.1" r="50"/>
-	<text transform="matrix(1 0 0 1 388.8813 1255.5734)" text-anchor="middle" class="number">T</text>
-</g>
-<g>
-	<polygon id="tile-2" class="tile" points="1364.5,0.6 1559.3,113.1 1559.3,338.1 1364.5,450.6 1169.6,338.1 1169.6,113.1 	"/>
-	<circle class="circle" cx="1364.5" cy="226.6" r="50"/>
-	<text transform="matrix(1 0 0 1 1363.1425 245.1233)" text-anchor="middle" class="number">T</text>
-</g>
-<g>
-	<polygon id="tile-3" class="tile" points="1559.3,338.1 1754.2,450.6 1754.2,675.6 1559.3,788.1 1364.5,675.6 1364.5,450.6 	"/>
-	<circle class="circle" cx="1559.3" cy="563.1" r="50"/>
-	<text transform="matrix(1 0 0 1 1558.0022 582.607)" text-anchor="middle" class="number">T</text>
-</g>
-<g>
-	<polygon id="tile-4" class="tile" points="1754.2,675.6 1949.1,788.1 1949.1,1013.1 1754.2,1125.6 1559.3,1013.1 1559.3,788.1 	"/>
-	<circle class="circle" cx="1754.2" cy="900.6" r="50"/>
-	<text transform="matrix(1 0 0 1 1752.8619 918.0907)" text-anchor="middle" class="number">T</text>
-</g>
-<g>
-	<polygon id="tile-7" class="tile" points="1169.6,338.1 1364.5,450.6 1364.5,675.6 1169.6,788.1 974.8,675.6 974.8,450.6 	"/>
-	<circle class="circle" cx="1169.6" cy="563.1" r="50"/>
-	<text transform="matrix(1 0 0 1 1168.2898 582.6064)" text-anchor="middle" class="number">T</text>
-</g>
-<g>
-	<polygon id="tile-8" class="tile" points="1364.5,675.6 1559.3,788.1 1559.3,1013.1 1364.5,1125.6 1169.6,1013.1 1169.6,788.1 	"/>
-	<circle class="circle" cx="1364.5" cy="900.6" r="50"/>
-	<text transform="matrix(1 0 0 1 1363.1433 918.0895)" text-anchor="middle" class="number">T</text>
-</g>
-<g>
-	<polygon id="tile-16" class="tile" points="1559.3,1463.1 1364.5,1350.6 1364.5,1125.6 1559.3,1013.1 1754.2,1125.6 1754.2,1350.6
-		"/>
-	<circle class="circle" cx="1559.3" cy="1238.1" r="50"/>
-	<text transform="matrix(1 0 0 1 1557.9968 1255.5725)" text-anchor="middle" class="number">T</text>
-</g>
-<g>
-	<polygon id="tile-11" class="tile" points="974.8,675.6 1169.6,788.1 1169.6,1013.1 974.8,1125.6 779.9,1013.1 779.9,788.1 	"/>
-	<circle class="circle" cx="974.8" cy="900.6" r="50"/>
-	<text transform="matrix(1 0 0 1 973.4371 918.0895)" text-anchor="middle" class="number">T</text>
-</g>
-<g>
-	<polygon id="tile-16_1_" class="tile" points="1169.6,1463.1 974.8,1350.6 974.8,1125.6 1169.6,1013.1 1364.5,1125.6 1364.5,1350.6
-			"/>
-	<circle class="circle" cx="1169.6" cy="1238.1" r="50"/>
-	<text transform="matrix(1 0 0 1 1168.2825 1255.5723)" text-anchor="middle" class="number">T</text>
-</g>
-<g>
-	<polygon id="tile-12" class="tile" points="1364.5,1800.6 1169.6,1688.1 1169.6,1463.1 1364.5,1350.6 1559.3,1463.1 1559.3,1688.1
-		"/>
-	<circle class="circle" cx="1364.5" cy="1575.6" r="50"/>
-	<text transform="matrix(1 0 0 1 1363.1278 1593.0549)" text-anchor="middle" class="number">T</text>
-</g>
-<g>
-	<polygon id="tile-17" class="tile" points="779.9,1463.1 585.1,1350.6 585.1,1125.6 779.9,1013.1 974.8,1125.6 974.8,1350.6 	"/>
-	<circle class="circle" cx="779.9" cy="1238.1" r="50"/>
-	<text transform="matrix(1 0 0 1 778.5844 1255.5728)" text-anchor="middle" class="number">T</text>
-</g>
-<g>
-	<polygon id="tile-13" class="tile" points="974.8,1800.6 779.9,1688.1 779.9,1463.1 974.8,1350.6 1169.6,1463.1 1169.6,1688.1 	"/>
-	<circle class="circle" cx="974.8" cy="1575.6" r="50"/>
-	<text transform="matrix(1 0 0 1 973.437 1593.0554)" text-anchor="middle" class="number">T</text>
-</g>
-<g>
-	<polygon id="tile-14" class="tile" points="585.1,1800.6 390.2,1688.1 390.2,1463.1 585.1,1350.6 779.9,1463.1 779.9,1688.1 	"/>
-	<circle class="circle" cx="585.1" cy="1575.6" r="50"/>
-	<text transform="matrix(1 0 0 1 583.7317 1593.0558)" text-anchor="middle" class="number">T</text>
-</g>
-</svg>
-
-</div>
+  <div class="game-board">
+    <svg id="classic-hex-board" xmlns="http://www.w3.org/2000/svg" width="1949.56" height="1801.15" viewBox="0 0 1949.56 1801.15">
+      <title>classic-catan-board</title>
+      <g>
+      	<polygon id="tile-0" class="tile" points="585.1,0.6 779.9,113.1 779.9,338.1 585.1,450.6 390.2,338.1 390.2,113.1 	"/>
+      	<circle class="circle" cx="585.1" cy="226.6" r="50"/>
+      	<text transform="matrix(1 0 0 1 585.7222 245.1232)" text-anchor="middle" class="number">T</text>
+      </g>
+      <g>
+      	<polygon id="tile-5" class="tile" points="390.2,338.1 585.1,450.6 585.1,675.6 390.2,788.1 195.4,675.6 195.4,450.6 	"/>
+      	<circle class="circle" cx="390.2" cy="563.1" r="50"/>
+      	<text transform="matrix(1 0 0 1 388.8623 582.6068)" text-anchor="middle" class="number">T</text>
+      </g>
+      <g>
+      	<polygon id="tile-9" class="tile" points="195.4,675.6 390.2,788.1 390.2,1013.1 195.4,1125.6 0.5,1013.1 0.5,788.1 	"/>
+      	<circle class="circle" cx="195.4" cy="900.6" r="50"/>
+      	<text transform="matrix(1 0 0 1 194.0025 918.0903)" text-anchor="middle" class="number">T</text>
+      </g>
+      <g>
+      	<polygon id="tile-1" class="tile" points="974.8,0.6 1169.6,113.1 1169.6,338.1 974.8,450.6 779.9,338.1 779.9,113.1 	"/>
+      	<circle class="circle" cx="974.8" cy="226.6" r="50"/>
+      	<text transform="matrix(1 0 0 1 973.4362 245.1233)" text-anchor="middle" class="number">T</text>
+      </g>
+      <g>
+      	<polygon id="tile-6" class="tile" points="779.9,338.1 974.8,450.6 974.8,675.6 779.9,788.1 585.1,675.6 585.1,450.6 	"/>
+      	<circle class="circle" cx="779.9" cy="563.1" r="50"/>
+      	<text transform="matrix(1 0 0 1 778.5845 582.6066)" text-anchor="middle" class="number">T</text>
+      </g>
+      <g>
+      	<polygon id="tile-10" class="tile" points="585.1,675.6 779.9,788.1 779.9,1013.1 585.1,1125.6 390.2,1013.1 390.2,788.1 	"/>
+      	<circle class="circle" cx="585.1" cy="900.6" r="50"/>
+      	<text transform="matrix(1 0 0 1 583.7329 918.09)" text-anchor="middle" class="number">T</text>
+      </g>
+      <g>
+      	<polygon id="tile-15" class="tile" points="390.2,1463.1 195.4,1350.6 195.4,1125.6 390.2,1013.1 585.1,1125.6 585.1,1350.6 	"/>
+      	<circle class="circle" cx="390.2" cy="1238.1" r="50"/>
+      	<text transform="matrix(1 0 0 1 388.8813 1255.5734)" text-anchor="middle" class="number">T</text>
+      </g>
+      <g>
+      	<polygon id="tile-2" class="tile" points="1364.5,0.6 1559.3,113.1 1559.3,338.1 1364.5,450.6 1169.6,338.1 1169.6,113.1 	"/>
+      	<circle class="circle" cx="1364.5" cy="226.6" r="50"/>
+      	<text transform="matrix(1 0 0 1 1363.1425 245.1233)" text-anchor="middle" class="number">T</text>
+      </g>
+      <g>
+      	<polygon id="tile-3" class="tile" points="1559.3,338.1 1754.2,450.6 1754.2,675.6 1559.3,788.1 1364.5,675.6 1364.5,450.6 	"/>
+      	<circle class="circle" cx="1559.3" cy="563.1" r="50"/>
+      	<text transform="matrix(1 0 0 1 1558.0022 582.607)" text-anchor="middle" class="number">T</text>
+      </g>
+      <g>
+      	<polygon id="tile-4" class="tile" points="1754.2,675.6 1949.1,788.1 1949.1,1013.1 1754.2,1125.6 1559.3,1013.1 1559.3,788.1 	"/>
+      	<circle class="circle" cx="1754.2" cy="900.6" r="50"/>
+      	<text transform="matrix(1 0 0 1 1752.8619 918.0907)" text-anchor="middle" class="number">T</text>
+      </g>
+      <g>
+      	<polygon id="tile-7" class="tile" points="1169.6,338.1 1364.5,450.6 1364.5,675.6 1169.6,788.1 974.8,675.6 974.8,450.6 	"/>
+      	<circle class="circle" cx="1169.6" cy="563.1" r="50"/>
+      	<text transform="matrix(1 0 0 1 1168.2898 582.6064)" text-anchor="middle" class="number">T</text>
+      </g>
+      <g>
+      	<polygon id="tile-8" class="tile" points="1364.5,675.6 1559.3,788.1 1559.3,1013.1 1364.5,1125.6 1169.6,1013.1 1169.6,788.1 	"/>
+      	<circle class="circle" cx="1364.5" cy="900.6" r="50"/>
+      	<text transform="matrix(1 0 0 1 1363.1433 918.0895)" text-anchor="middle" class="number">T</text>
+      </g>
+      <g>
+      	<polygon id="tile-16" class="tile" points="1559.3,1463.1 1364.5,1350.6 1364.5,1125.6 1559.3,1013.1 1754.2,1125.6 1754.2,1350.6
+      		"/>
+      	<circle class="circle" cx="1559.3" cy="1238.1" r="50"/>
+      	<text transform="matrix(1 0 0 1 1557.9968 1255.5725)" text-anchor="middle" class="number">T</text>
+      </g>
+      <g>
+      	<polygon id="tile-11" class="tile" points="974.8,675.6 1169.6,788.1 1169.6,1013.1 974.8,1125.6 779.9,1013.1 779.9,788.1 	"/>
+      	<circle class="circle" cx="974.8" cy="900.6" r="50"/>
+      	<text transform="matrix(1 0 0 1 973.4371 918.0895)" text-anchor="middle" class="number">T</text>
+      </g>
+      <g>
+      	<polygon id="tile-16_1_" class="tile" points="1169.6,1463.1 974.8,1350.6 974.8,1125.6 1169.6,1013.1 1364.5,1125.6 1364.5,1350.6
+      			"/>
+      	<circle class="circle" cx="1169.6" cy="1238.1" r="50"/>
+      	<text transform="matrix(1 0 0 1 1168.2825 1255.5723)" text-anchor="middle" class="number">T</text>
+      </g>
+      <g>
+      	<polygon id="tile-12" class="tile" points="1364.5,1800.6 1169.6,1688.1 1169.6,1463.1 1364.5,1350.6 1559.3,1463.1 1559.3,1688.1
+      		"/>
+      	<circle class="circle" cx="1364.5" cy="1575.6" r="50"/>
+      	<text transform="matrix(1 0 0 1 1363.1278 1593.0549)" text-anchor="middle" class="number">T</text>
+      </g>
+      <g>
+      	<polygon id="tile-17" class="tile" points="779.9,1463.1 585.1,1350.6 585.1,1125.6 779.9,1013.1 974.8,1125.6 974.8,1350.6 	"/>
+      	<circle class="circle" cx="779.9" cy="1238.1" r="50"/>
+      	<text transform="matrix(1 0 0 1 778.5844 1255.5728)" text-anchor="middle" class="number">T</text>
+      </g>
+      <g>
+      	<polygon id="tile-13" class="tile" points="974.8,1800.6 779.9,1688.1 779.9,1463.1 974.8,1350.6 1169.6,1463.1 1169.6,1688.1 	"/>
+      	<circle class="circle" cx="974.8" cy="1575.6" r="50"/>
+      	<text transform="matrix(1 0 0 1 973.437 1593.0554)" text-anchor="middle" class="number">T</text>
+      </g>
+      <g>
+      	<polygon id="tile-14" class="tile" points="585.1,1800.6 390.2,1688.1 390.2,1463.1 585.1,1350.6 779.9,1463.1 779.9,1688.1 	"/>
+      	<circle class="circle" cx="585.1" cy="1575.6" r="50"/>
+      	<text transform="matrix(1 0 0 1 583.7317 1593.0558)" text-anchor="middle" class="number">T</text>
+      </g>
+    </svg>
+  </div>
 </body>
-<script>
-// Resource tiles
-// 4 wood, 4 sheep, 3 brick, 3 wheat, 3 ore, 1 desert
-
-'use strict';
-
-window.onload = function () {
-
-  // Resource types
-  var resourceTypes = ['wood', 'sheep', 'brick', 'wheat', 'ore', 'desert'];
-
-  // Amount of each resource
-  var woodAmount = 4;
-  var sheepAmount = 4;
-  var wheatAmount = 4;
-  var brickAmount = 3;
-  var oreAmount = 3;
-  var desertAmount = 1;
-
-  // Resources object
-  var resourceTiles = {
-    wood: { amount: woodAmount },
-    sheep: { amount: sheepAmount },
-    wheat: { amount: wheatAmount },
-    brick: { amount: brickAmount },
-    ore: { amount: oreAmount },
-    desert: { amount: desertAmount }
-  };
-
-  // Return a node list of the svg elements
-  var tiles = document.querySelectorAll('.tile');
-
-  // Array of available resources
-  var availableResources = [];
-
-  // Build a list of available resources
-  var updateAvalaibleResources = function updateAvalaibleResources() {
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-      for (var _iterator = Object.keys(resourceTiles)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var key = _step.value;
-
-        if (resourceTiles[key].amount > 0) {
-          availableResources.push('' + key);
-        } else if (resourceTiles[key].amount == 0) {
-          var emptyResource = availableResources.indexOf('' + key);
-          if (emptyResource != -1) {
-            availableResources.splice(emptyResource, 1);
-          };
-        }
-      }
-    } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion && _iterator['return']) {
-          _iterator['return']();
-        }
-      } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
-        }
-      }
-    }
-  };updateAvalaibleResources();
-
-  // Loop over the tiles and add resource name
-  var addRandomResource = function addRandomResource() {
-    tiles.forEach(function (tile) {
-
-      var randomResourceName = availableResources[Math.floor(Math.random() * availableResources.length)];
-
-      tile.classList += " " + "tile--" + randomResourceName;
-      resourceTiles[randomResourceName].amount--;
-
-      console.log(tile.id + " " + "is" + " " + tile.classList);
-      console.log(randomResourceName + " tiles left = " + resourceTiles[randomResourceName].amount);
-
-      // Drop the current list of available resources
-      availableResources = [];
-
-      // Rebuild the current list of available resources
-      updateAvalaibleResources();
-    });
-  };addRandomResource();
-
-  // Amount of each number
-  var twoAmount = 1;
-  var threeAmount = 2;
-  var fourAmount = 2;
-  var fiveAmount = 2;
-  var sixAmount = 2;
-  // skip seven
-  var eightAmount = 2;
-  var nineAmount = 2;
-  var tenAmount = 2;
-  var elevenAmount = 2;
-  var twelveAmount = 1;
-
-  // Number object
-  var tileNumbers = {
-    2: { amount: twoAmount },
-    3: { amount: threeAmount },
-    4: { amount: fourAmount },
-    5: { amount: fiveAmount },
-    6: { amount: sixAmount },
-    // skip seven
-    8: { amount: eightAmount },
-    9: { amount: nineAmount },
-    10: { amount: tenAmount },
-    11: { amount: elevenAmount },
-    12: { amount: twelveAmount }
-  };
-
-  // Return a node list of the svg elements
-  var numbers = document.querySelectorAll('.tile:not(.tile--desert) ~ .number');
-
-  // Array of available resources
-  var availableNumbers = [];
-
-  // Build a list of available resources
-  var updateAvalaibleNumbers = function updateAvalaibleNumbers() {
-    var _iteratorNormalCompletion2 = true;
-    var _didIteratorError2 = false;
-    var _iteratorError2 = undefined;
-
-    try {
-      for (var _iterator2 = Object.keys(tileNumbers)[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-        var key = _step2.value;
-
-        if (tileNumbers[key].amount > 0) {
-          availableNumbers.push('' + key);
-        } else if (tileNumbers[key].amount == 0) {
-          var emptyNumber = availableNumbers.indexOf('' + key);
-          if (emptyNumber != -1) {
-            availableNumber.splice(emptyNumber, 1);
-          };
-        }
-      }
-    } catch (err) {
-      _didIteratorError2 = true;
-      _iteratorError2 = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion2 && _iterator2['return']) {
-          _iterator2['return']();
-        }
-      } finally {
-        if (_didIteratorError2) {
-          throw _iteratorError2;
-        }
-      }
-    }
-  };updateAvalaibleNumbers();
-
-  // Loop over the tiles and add resource name
-  var addRandomNumber = function addRandomNumber() {
-    numbers.forEach(function (number) {
-
-      var randomNumber = availableNumbers[Math.floor(Math.random() * availableNumbers.length)];
-      number.textContent = '' + randomNumber;
-      tileNumbers[randomNumber].amount--;
-
-      // Drop the current list of available resources
-      availableNumbers = [];
-
-      // Rebuild the current list of available resources
-      updateAvalaibleNumbers();
-    });
-  };addRandomNumber();
-};
-</script>
 </html>

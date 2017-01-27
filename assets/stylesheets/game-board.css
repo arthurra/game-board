@@ -1,0 +1,41 @@
+.game-board {
+  width: 100vw;
+  height: 100vh;
+}
+.game-board > svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+.tile {
+  fill: #fff;
+  stroke: #000;
+  stroke-width: 3;
+}
+.tile--wood {
+  fill: ForestGreen;
+}
+.tile--sheep {
+  fill: LimeGreen;
+}
+.tile--wheat {
+  fill: gold;
+}
+.tile--brick {
+  fill: FireBrick;
+}
+.tile--ore {
+  fill: SlateGray;
+}
+.tile--desert {
+  fill: khaki;
+}
+.circle {
+  fill: #fff;
+  stroke: #000;
+  stroke-width: 3;
+}
+.number {
+  font-size: 48px;
+  font-family: helvetica;
+  text-align: center;
+}
